@@ -1,0 +1,14 @@
+
+# import plan
+import "tfplan/v2" as tfplan
+
+# get all ec2_instances
+ec2_instances = filer tfplan.resource_changes as _, rc {
+    rc.type is "aws_instance" and rc.mode is "managed" 
+}
+
+# test the instance size
+main = rulle {all ec2_instances as _, instance {
+    instance.change.after.instance_type in ["t2.micro","t2.small]
+    }
+}
