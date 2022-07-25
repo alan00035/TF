@@ -21,3 +21,16 @@ variable network_info{
 cidr_block = cidrsubnet(var.network_info, 8, 0)
 #return 10.1.0.5
 host_ip = cidrhost(var.network_info, 5)
+
+
+# providers
+versioned, 
+data sources
+resources
+modules
+authentications
+
+- static credentials
+- environmental variables
+- AWS CLI/Shared credentials files
+- instance profile
